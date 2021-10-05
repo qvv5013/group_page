@@ -49,7 +49,7 @@ body{margin-top:20px;}
 
 .member-profile img {
     width: 100px;
-    height: 100px;
+    /* height: 110px; */
 }
 .rounded-circle {
     border-radius: 50% !important;
