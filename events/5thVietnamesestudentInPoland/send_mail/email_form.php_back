@@ -1,0 +1,85 @@
+<?php
+// multiple recipients
+ $to  =$_POST['email'] . ', '; // note the comma
+ $to .= 'Organizer <huy.pdq@gmail.com>';
+$title=$_POST['title'];
+$fname=$_POST['first_Name'];
+$lname=$_POST['family_Name'];
+$affiliation=$_POST['affiliation'];
+$address=$_POST['address'];
+$city_code=$_POST['city_code'];
+$city=$_POST['city'];
+$country=$_POST['country'];
+$email=$_POST['email'];
+$tel=$_POST['Tel'];
+$fax=$_POST['Fax'];
+$web=$_POST['Website'];
+$food=$_POST['Food'];
+$attending_day15=$_POST['attending_day15'];
+$attending_day16=$_POST['attending_day16'];
+$attending_day17=$_POST['attending_day17'];
+$presentation=$_POST['presentation'];
+$invited_talk=$_POST['invited_talk'];
+$upfile_invited=$_POST['upfile_invited'];
+$poster_presentation=$_POST['poster_presentation'];
+$poster_title=$_POST['poster_title'];
+$upfile_poster=$_POST['upfile_poster'];
+$hotel14=$_POST['hotel14'];
+$hotel14=$_POST['hotel15'];
+$hotel14=$_POST['hotel16'];
+$hotel14=$_POST['hotel17'];
+$hotel14=$_POST['hotel18'];
+$hotel_room=$_POST['Hotel_room'];
+$roommate=$_POST['roommate'];
+// subject
+$subject = 'Registration for ICCST 2014';
+
+ // message
+ $message = "
+Dear $title $fname $lname,\r\n
+Thank you for your registration the details of which are given below.
+ We hope to see you in Warsaw soon.\r\n
+Best regards\r\n
+Organizers\r\n
+\r\n
+Registration informations:\r\n
+Title: $title\r\n
+Full name: $fname $lname\r\n
+Affiliation: $affiliation\r\n
+Adress: $address, $city_code, $city, $country\r\n
+Email: $email\r\n
+Tel: $tel\r\n
+Fax: $fax\r\n
+Website: $web\r\n
+\r\n
+Food: $food\r\n
+Attending days:\r\n
+May 15: $attending_day15\r\n
+May 16: $attending_day16\r\n
+May 17: $attending_day17\r\n
+\r\n
+Presentation type: $presentation  $invited_talk\r\n
+File uploaded: $upfile_invited\r\n
+\r\n
+Poster presentation: $poster_presentation\r\n
+Poster uploaded: $poster_title\r\n
+
+ ";
+
+                                                   // To send HTML mail, the Content-type header must be set
+//                                                   $headers  = 'MIME-Version: 1.0' . "\r\n";
+//                                                   $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+                                                   // Additional headers
+//                                                   $headers .= 'To: Mary <mary@example.com>, Kelly <kelly@example.com>' . "\r\n";
+                                                   $headers .= 'From: ICCST-2014' . "\r\n";
+//                                                   $headers .= 'Cc: birthdayarchive@example.com' . "\r\n";
+//                                                   $headers .= 'Bcc: birthdaycheck@example.com' . "\r\n";
+
+                                                   // Mail it
+                                                   mail($to, $subject, $message, $headers);
+
+echo "An email has been sent to you email adress!";
+                                                   ?>
+
+~                                             
